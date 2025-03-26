@@ -1,7 +1,5 @@
-import { AuthModalFooterProps } from "./interface";
-
-export const AuthModalFooter: React.FC<AuthModalFooterProps> = ({
+export const AuthModalFooter = ({
   children,
-}) => {
-  return <div className="footer">{children}</div>;
-};
+}: {
+  children: React.ReactNode;
+}) => <div className="footer">{children}</div>;

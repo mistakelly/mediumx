@@ -1,7 +1,6 @@
-import { FC } from "react";
-import { BasePageProps } from "@/utils/interface";
+import { Children } from "@/shared/types/types";
 
-const MainContent: FC<BasePageProps> = ({ children }) => {
+const MainContent: React.FC<Children> = ({ children }) => {
   return (
     <main className="preview-story-container">
       <div className="stories">

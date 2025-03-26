@@ -1,53 +1,21 @@
-import { handleSubmit } from "@/hooks/usefetch";
-import { useState } from "react";
-import { BaseModal } from "./BaseModal";
-import { SocialLogin } from "./SocialLogin";
-import { LocalAuthForm } from "./LocalAuth";
-import { SubmitButton } from "./SubmitButton";
-import { AuthModalFooter } from "./Footer";
-import { CloseModalButton } from "./CloseModalButton";
-import { AuthModalProps } from "./interface";
-
 import "@/styles/public/auth_modal.scss";
+import { TSignInProps } from "@/shared/types/types";
+import { AuthSocialLogin } from "./socialAuth/AuthSocialLoginBtns";
+import { AuthModalFooter } from "./Footer";
 
-export const SignIn: React.FC<AuthModalProps> = ({
-  onSwitch,
-  closeModal,
-  modalRef,
-}) => {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
-
-  // const endpoint = mode == "signup" ? "register" : "login";
-  const endpoint = "";
-
-  const onSubmit = () => {
-    handleSubmit(formData, endpoint);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
+export const SignIn: React.FC<TSignInProps> = ({ onSwitch }) => {
   return (
-    <BaseModal heading="Welcome To Mediumx" ref={modalRef}>
-      <SocialLogin buttonLabel="Sign in" />
-      <LocalAuthForm
-        formData={formData}
-        handleInputChange={handleInputChange}
-        onSubmit={onSubmit}
-      />
-      <SubmitButton buttonLabel="Sign In" onSubmit={onSubmit} />
-      <CloseModalButton closeModal={closeModal} />
+    <>
+      <h1 className="title">Welcome To Mediumx</h1>
+      <AuthSocialLogin buttonLabel="Sign in" />
+
+      {/* <SubmitButton buttonLabel="Sign In" onSubmit={onSubmit} /> */}
       <AuthModalFooter>
         <p>
           No account?
           <button onClick={onSwitch}>Create one</button>
         </p>
       </AuthModalFooter>
-    </BaseModal>
+    </>
   );
 };

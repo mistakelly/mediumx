@@ -1,8 +1,6 @@
-import { BasePageProps } from "@/utils/interface";
-import { FC } from "react";
 import "@/styles/public/preview-story.scss";
 
-const PreviewStoryPage: FC<BasePageProps> = ({ children }) => {
+const PreviewStoryPage = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="preview-story">
       <div className="container">{children}</div>
@@ -11,4 +9,3 @@ const PreviewStoryPage: FC<BasePageProps> = ({ children }) => {
 };
 
 export default PreviewStoryPage;
-

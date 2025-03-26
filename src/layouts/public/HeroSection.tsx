@@ -1,5 +1,4 @@
 import "@/styles/public/hero-section.scss";
-// import homeImage from "@/assets/images/home_image.webp";
 
 function HeroSection() {
   return (
@@ -10,14 +9,11 @@ function HeroSection() {
         <p className="main__paragraph">
           Your go-to platform for insightful stories and thought leadership
         </p>
-        <button className="main__cta">Start Reading...</button>
+        <button className="main__cta" onClick={() => console.log('button clicked')}>Start Reading...</button>
       </section>
 
       <picture className="main__picture">
-        <img
-          src="/assets/images/home_image.webp"
-          alt="Hero-Section-image"
-        />
+        <img src="/assets/images/home_image.webp" alt="Hero-Section-image" />
       </picture>
 
       <div className="scroll-arrow"> ❱ </div>

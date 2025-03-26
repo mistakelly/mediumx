@@ -11,6 +11,7 @@
   @include mixins.centerElement();
   flex-direction: column;
   margin-bottom: 8rem;
+  // z-index: -1;
 
   h1 {
     font-size: 4rem;

@@ -1,8 +1,6 @@
 import "@/styles/public/trend.scss";
-import { BasePageProps } from "@/utils/interface";
-import { FC } from "react";
 
-const TrendPage: FC<BasePageProps> = ({ children }) => {
+const TrendPage = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="trend-section">
       <main className="container">

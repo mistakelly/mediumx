@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export const useFormInput = () => {
+export const useAuthFormInput = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    confirmPassword: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

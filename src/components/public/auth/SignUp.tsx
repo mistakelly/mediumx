@@ -1,50 +1,28 @@
-import { handleSubmit } from "@/hooks/usefetch";
 import React from "react";
-import { BaseModal } from "./BaseModal";
-import { SocialLogin } from "./SocialLogin";
-import { LocalAuthForm } from "./LocalAuth";
-import { SubmitButton } from "./SubmitButton";
 import { AuthModalFooter } from "./Footer";
-import { CloseModalButton } from "./CloseModalButton";
-
 import "@/styles/public/auth_modal.scss";
-import { useFormInput } from "@/hooks/useFormInput";
-import { AuthModalProps } from "./interface";
 
-export const SignUp: React.FC<AuthModalProps> = ({
-  onSwitch,
-  closeModal,
-  modalRef,
-}) => {
-  const endpoint = "auth/register/";
+import { TSignUpProps } from "@/shared/types/types";
+import { AuthSocialLogin } from "./socialAuth/AuthSocialLoginBtns";
 
-  // custom hook
-  const { formData, handleInputChange } = useFormInput();
-
-  const onSubmit = () => {
-    handleSubmit(formData, endpoint);
-  };
-
+export const SignUp: React.FC<TSignUpProps> = ({ onSwitch }) => {
   return (
-    <BaseModal heading="Join Mediumx" ref={modalRef}>
-      <SocialLogin buttonLabel="Sign up" />
+    <>
+      <h1 className="title">Join Mediumx</h1>
 
-      <LocalAuthForm
-        formData={formData}
-        handleInputChange={handleInputChange}
-        onSubmit={onSubmit}
-      />
+      {/* social authentication */}
+      <AuthSocialLogin buttonLabel="Sign up" />
 
-      <SubmitButton buttonLabel="Sign up" onSubmit={onSubmit} />
+      {/* <SubmitButton buttonLabel="Sign up" onSubmit={onsubmit} /> */}
+      {/* <AuthCloseModalButton AuthCloseModal={authCloseModal} /> */}
 
-      <CloseModalButton closeModal={closeModal} />
-
+      {/* footer */}
       <AuthModalFooter>
         <p>
           Already have an account?
           <button onClick={onSwitch}>Sign in</button>
         </p>
       </AuthModalFooter>
-    </BaseModal>
+    </>
   );
 };
