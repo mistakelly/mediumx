@@ -16,6 +16,7 @@ export const useAuthHandleModal = () => {
         setIsModalVisible((prev) => !prev);
       }
     };
+
     toggleBodyOverlay(isModalVisible);
     document.addEventListener("click", handleClickOutside);
 

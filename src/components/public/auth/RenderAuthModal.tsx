@@ -1,49 +1,36 @@
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
-
 import { useAuthModalContext } from "@/contexts/useAuthModalContext";
-import LocalEmail from "./socialAuth/LocalEmail";
 import { AuthBaseModal } from "./AuthBaseModal";
+import { RenderAuthLocalEmail } from "./AuthLocalEmail/Render";
+import { RenderLocalAuth } from "./AuthLocal/Render";
 
 export const RenderAuthModal = () => {
-  const {
-    onSwitch,
-    modalType,
-    prevAuthModalState,
-    isModalVisible,
-    authCloseModal,
-    AuthModalRef,
-  } = useAuthModalContext();
+  console.log("rerender:"); // Debugging
+  const { modalType, isModalVisible } = useAuthModalContext();
 
   const renderContent = () => {
     switch (modalType) {
       case "signUp":
-        return <SignUp onSwitch={onSwitch("signIn")} />;
+        return <SignUp />;
       case "signIn":
-        return <SignIn onSwitch={onSwitch("signUp")} />;
+        return <SignIn />;
 
       case "localEmail":
-        return (
-          <LocalEmail
-            onSwitch={
-              prevAuthModalState.current === "signUp"
-                ? onSwitch("signUp")
-                : onSwitch("signIn")
-            }
-          />
-        );
+        return <RenderAuthLocalEmail />;
+
+      case "localAuth":
+        return <RenderLocalAuth />;
+
       default:
         return null;
     }
   };
 
   return (
-    <>
-      {isModalVisible && (
-        <AuthBaseModal authCloseModal={authCloseModal} ref={AuthModalRef}>
-          {renderContent()}
-        </AuthBaseModal>
-      )}
-    </>
+    <>{isModalVisible && <AuthBaseModal>{renderContent()}</AuthBaseModal>}</>
+    // <>
+    //   {/* {<AuthBaseModal>{<LocalAuthSignUp />}</AuthBaseModal>} */}
+    // </>
   );
 };

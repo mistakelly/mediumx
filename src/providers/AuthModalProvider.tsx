@@ -19,7 +19,7 @@ export const AuthModalProvider: React.FC<Children> = ({ children }) => {
   } = useAuthModalState();
 
   // Methods
-  const { openAuthModal, authCloseModal, onSwitch } = useAuthModalMethod(
+  const { openAuthModal, authCloseModal } = useAuthModalMethod(
     setModalType,
     setIsModalVisible
   );
@@ -37,7 +37,7 @@ export const AuthModalProvider: React.FC<Children> = ({ children }) => {
         prevAuthModalState,
         openAuthModal,
         authCloseModal,
-        onSwitch,
+
         label,
         setLabel,
       }}

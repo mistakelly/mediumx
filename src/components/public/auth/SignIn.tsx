@@ -1,9 +1,10 @@
 import "@/styles/public/auth_modal.scss";
-import { TSignInProps } from "@/shared/types/types";
 import { AuthSocialLogin } from "./socialAuth/AuthSocialLoginBtns";
 import { AuthModalFooter } from "./Footer";
+import { useAuthModalContext } from "@/contexts/useAuthModalContext";
 
-export const SignIn: React.FC<TSignInProps> = ({ onSwitch }) => {
+export const SignIn = () => {
+  const { openAuthModal } = useAuthModalContext();
   return (
     <>
       <h1 className="title">Welcome To Mediumx</h1>
@@ -13,7 +14,7 @@ export const SignIn: React.FC<TSignInProps> = ({ onSwitch }) => {
       <AuthModalFooter>
         <p>
           No account?
-          <button onClick={onSwitch}>Create one</button>
+          <button onClick={openAuthModal("signUp")}>Create one</button>
         </p>
       </AuthModalFooter>
     </>
