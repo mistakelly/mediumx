@@ -44,7 +44,7 @@ const RenderCategories = React.forwardRef<
       key={category.id}
       data-category-id={category.id}
       onClick={handleClick}
-      className="category-li"
+      className="btns category-ul__btns"
     >
       <span>{category.emoji}</span>
       {category.name}
@@ -60,7 +60,7 @@ const RenderCategories = React.forwardRef<
   );
 });
 
-export const UserStoryPref = () => {
+export const SelectStoryCategory = () => {
   const accessToken = localStorage.getItem("access");
   const [categoryIdSet, setCategoryIdSet] = React.useState(new Set<string>());
 

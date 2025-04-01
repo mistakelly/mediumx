@@ -8,15 +8,15 @@ import MainContent from "@/components/public/preview/MainContent";
 import Story from "@/components/public/preview/Story";
 import { RenderAuthModal } from "@/components/public/auth/RenderAuthModal";
 import { useAuthHandleModal } from "@/hooks/auth/useAuthHandleModal";
-import { UserStoryPref } from "@/components/public/StoryPref";
+import { SelectStoryCategory } from "@/components/public/SelectStoryCategory";
 
 function LandingPage() {
   useAuthHandleModal();
 
   return (
     <>
-      <UserStoryPref />
-      {/* <RenderAuthModal />
+      {/* <SelectStoryCategory /> */}
+      <RenderAuthModal />
       <PublicHeader />
       <HeroSection />
       <TrendPage>
@@ -32,7 +32,7 @@ function LandingPage() {
           <Story />
           <Story />
         </MainContent>
-      </PreviewStoryPage> */}
+      </PreviewStoryPage>
     </>
   );
 }
