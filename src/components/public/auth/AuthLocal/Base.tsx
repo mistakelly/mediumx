@@ -4,15 +4,22 @@ import googleSvg from "@/components/svg/google.svg";
 import passwordSvg from "@/components/svg/password.svg";
 import profileSvg from "@/components/svg/user_profile.svg";
 import "@/styles/public/local_auth.scss";
+import React from "react";
 
 export const BaseLocalAuth = ({
   desc,
   buttonLabel,
   heading,
+  onSubmit,
+  formData,
+  handleInputChange,
 }: {
   desc: string;
   buttonLabel: string;
   heading: string;
+  formData: { username: string; password: string };
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (e: React.FormEvent) => void;
 }) => {
   return (
     <>
@@ -34,14 +41,26 @@ export const BaseLocalAuth = ({
 
       <p style={{ marginBottom: ".5rem" }}>{desc}</p>
 
-      <form action="" className="form">
+      <form action="" className="form" onSubmit={onSubmit}>
         <div className="form__input form__username-input">
           <img src={profileSvg} alt="profileSvg" />
-          <input type="text" placeholder="username" />
+          <input
+            type="text"
+            placeholder="username"
+            value={formData.username}
+            onChange={handleInputChange}
+            name="username"
+          />
         </div>
         <div className="form__input form__password-input">
           <img src={passwordSvg} alt="passwordSvg" />
-          <input type="password" placeholder="password" />
+          <input
+            type="password"
+            placeholder="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            name="password"
+          />
         </div>
 
         <button style={{ textTransform: "uppercase", fontWeight: 500 }}>

@@ -2,9 +2,7 @@
 
 .header {
   height: 7rem;
-
   border-bottom: 1px solid #ccc;
-
   @include mixins.centerElement();
   position: sticky;
   top: 0;
@@ -25,7 +23,7 @@ button {
 }
 
 .nav {
-  width: 90%;
+  width: 90%; 
   height: 100%;
 
   &__ul {
