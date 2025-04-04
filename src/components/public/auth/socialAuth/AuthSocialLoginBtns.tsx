@@ -7,7 +7,7 @@ export const AuthSocialLogin = ({ buttonLabel }) => {
   const { openAuthModal } = useAuthModalContext();
 
   return (
-    <div className="content">
+    <>
       <GoogleBtn buttonLabel={buttonLabel} />
 
       <div className="btns email__btn" onClick={openAuthModal("localEmail")}>
@@ -21,6 +21,6 @@ export const AuthSocialLogin = ({ buttonLabel }) => {
         <span className="social-auth__label">{buttonLabel} with password</span>
         <div></div>
       </div>
-    </div>
+    </>
   );
 };

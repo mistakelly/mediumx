@@ -11,10 +11,11 @@ interface RenderCategorieProps {
 }
 
 import { fetchData, submitData } from "@/services/submit";
-import "@/styles/public/input_component.scss";
+import "@/styles/public/choose_story_category.scss";
 import { BASEURL } from "@/constants";
+import { useNavigate } from "react-router-dom";
 
-const fetchCategories = () => {
+export const fetchCategories = () => {
   const url = `${BASEURL}/stories/get_categories`;
   const accessToken = localStorage.getItem("access");
   const [categories, setCatgory] = React.useState<TCategories>();
@@ -63,6 +64,7 @@ const RenderCategories = React.forwardRef<
 export const SelectStoryCategory = () => {
   const accessToken = localStorage.getItem("access");
   const [categoryIdSet, setCategoryIdSet] = React.useState(new Set<string>());
+  const navigate = useNavigate();
 
   //   refs
   const categoryUlRef = React.useRef<HTMLUListElement | null>(null);
@@ -116,12 +118,15 @@ export const SelectStoryCategory = () => {
     try {
       await submitData(
         `${BASEURL}/auth/set_user_preference/`,
-        accessToken,
         "POST",
         {
           category_ids: Array.from(categoryIdSet),
-        }
+        },
+        accessToken
       );
+
+      // navigate to home if everything is successful and that is the start of the application.
+      navigate("/home");
     } catch (err) {
       console.log("err", err);
     }
@@ -156,7 +161,7 @@ export const SelectStoryCategory = () => {
   );
 };
 
-const InputComponent = ({
+export const InputComponent = ({
   name,
   placeholder,
   type,

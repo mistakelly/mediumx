@@ -1,0 +1,80 @@
+.username-container {
+  h1 {
+    font-size: 4rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+.username-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  //   background: red;
+
+  .username-header {
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-bottom: 1.5rem;
+    }
+    text-align: center;
+    p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: gray;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .username-body {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    label {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      font-size: 1.4rem;
+      background: transparent;
+      margin-bottom: 1rem;
+
+      &:-webkit-autofill {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: inherit !important;
+      }
+
+      &:focus {
+        // background: transparent;
+      }
+    }
+
+    button {
+      padding: 1rem 4rem 1rem 4rem;
+      margin-top: 2rem;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1.4rem;
+      background: rgb(91, 208, 91);
+      color: white;
+      transition: all 0.5s;
+
+      &:hover {
+        background: green;
+      }
+    }
+  }
+}

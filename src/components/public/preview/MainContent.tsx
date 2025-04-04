@@ -10,7 +10,11 @@ const MainContent: React.FC<Children> = ({ children }) => {
           <button>See more topics</button>
         </div>
 
-        <div className="story-container">{children}</div>
+        <div className="story-container">
+          <div className="preview" style={{ width: "90%" }}>
+            {children}
+          </div>
+        </div>
       </div>
 
       <div className="outro">

@@ -21,8 +21,10 @@ const PublicHeader = () => {
           <li>
             <a href="#">Trending</a>
           </li>
-          <button onClick={openAuthModal("signIn")}>Sign In</button>
-          <button className="nav__cta" onClick={openAuthModal("signUp")}>
+          <button onClick={openAuthModal("signIn")} className="nav__signin-btn">
+            Sign In
+          </button>
+          <button className="nav__signup-btn" onClick={openAuthModal("signUp")}>
             Get Started
           </button>
         </ul>

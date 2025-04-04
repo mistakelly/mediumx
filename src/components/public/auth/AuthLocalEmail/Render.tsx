@@ -5,9 +5,10 @@ import { AuthLocalEmailSignIn } from "./SignIn";
 export const RenderAuthLocalEmail = () => {
   const { prevAuthModalState } = useAuthModalContext();
 
-  return prevAuthModalState.current == "signUp" ? (
-    <AuthLocalEmailSignUp />
-  ) : (
-    <AuthLocalEmailSignIn />
-  );
+  // return prevAuthModalState.current == "signUp" ? (
+  //   <AuthLocalEmailSignUp />
+  // ) : (
+  //   <AuthLocalEmailSignIn />
+  // );
+  return <AuthLocalEmailSignUp />;
 };

@@ -6,10 +6,10 @@ import { RenderAuthLocalEmail } from "./AuthLocalEmail/Render";
 import { RenderLocalAuth } from "./AuthLocal/Render";
 
 export const RenderAuthModal = () => {
-  console.log("rerender:"); // Debugging
   const { modalType, isModalVisible } = useAuthModalContext();
 
   const renderContent = () => {
+    // return <RenderAuthLocalEmail />;
     switch (modalType) {
       case "signUp":
         return <SignUp />;
@@ -29,8 +29,7 @@ export const RenderAuthModal = () => {
 
   return (
     <>{isModalVisible && <AuthBaseModal>{renderContent()}</AuthBaseModal>}</>
-    // <>
-    //   {/* {<AuthBaseModal>{<LocalAuthSignUp />}</AuthBaseModal>} */}
-    // </>
+
+    // <>{<AuthBaseModal>{<RenderAuthLocalEmail />}</AuthBaseModal>}</>
   );
 };
