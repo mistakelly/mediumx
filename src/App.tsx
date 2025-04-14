@@ -6,6 +6,8 @@ import { AuthChooseUsername } from "./components/public/auth/AuthLocalEmail/Choo
 import { SelectStoryCategory } from "./components/public/auth/ChooseStoryCategory";
 import { useEffect, useState } from "react";
 import { Home } from "./components/private/Home";
+import { NewStory, StoryPreview } from "./components/private/NewStory";
+import { UserProfile } from "./components/private/Profile";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -27,6 +29,9 @@ function App() {
         />
         <Route path="/choose-username" element={<AuthChooseUsername />} />
         <Route path="/select-category" element={<SelectStoryCategory />} />
+        <Route path="/new-story" element={<NewStory />} />
+        <Route path="/story-preview" element={<StoryPreview />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/home" element={<Home />} />
 
         <Route

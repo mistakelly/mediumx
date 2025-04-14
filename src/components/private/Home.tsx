@@ -1,41 +1,10 @@
 import { useEffect } from "react";
-import { InputComponent } from "../public/auth/ChooseStoryCategory";
-import searchSvg from "@/components/svg/search-magnifying-glass-svgrepo-com.svg";
 import "@/styles/private/home.scss";
-import { WriteSvg } from "../svg/WriteSvg";
-import { NotificaitonSvg } from "../svg/NotificationSvg";
-import { Link } from "react-router-dom";
-import ClapSvg from "../svg/ClapSvg";
 import Story from "../public/preview/Story";
 import { PlusSvg } from "../svg/PlusSvg";
-import CommentSvg from "../svg/CommentSvg";
+import { PrivateHeader } from "./PrivateHeader";
 
-const PrivateHeader = () => {
-  return (
-    <header className="home__header">
-      <div className="home__header-left">
-        <h1>
-          <Link to="/" />
-          MEDIUMX
-        </h1>
-        <InputComponent
-          name="search"
-          placeholder="search"
-          type="text"
-          icon={searchSvg}
-          imgAlt=""
-        />
-      </div>
-      <div className="home__header-right">
-        <WriteSvg />
-        <NotificaitonSvg />
-        <div className="right-profile-div">
-          <img src="/assets/images/test_img.png" alt="profile-img" />
-        </div>
-      </div>
-    </header>
-  );
-};
+
 
 export const Home = () => {
   useEffect(() => {

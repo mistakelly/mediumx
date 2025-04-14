@@ -167,3 +167,4 @@ create_app.sh clean_migrations.sh
 features.md
 create_app.sh
 clean_migrations.sh
+.qodo

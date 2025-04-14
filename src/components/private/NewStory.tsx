@@ -1,9 +1,7 @@
 import "@/styles/private/new_story.scss";
 import ShowMoreSvg from "../svg/ShowMoreSvg";
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import { BASEURL } from "@/constants";
-import axios from "axios";
+import { useRef, useState } from "react";
 import CancelSvg from "../svg/CancelSvg";
 
 export const NewStory = () => {

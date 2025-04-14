@@ -47,3 +47,28 @@ export const submitData = async <T>(
   // return err;
   // }
 };
+
+// const url = `${BASEURL}/stories/`; 
+// const accessToken = localStorage.getItem("access");
+
+// console.log("title", title);
+
+// const formData = new FormData();
+
+// formData.append("title", title);
+// formData.append("sub_title", subTitle);
+// formData.append("content", content);
+// formData.append("banner", selectedFile);
+
+// try {
+//   const res = axios.post(url, formData, {
+//     headers: {
+//       Authorization: `Bearer ${accessToken}`,
+//       "Content-Type": "multipart/form-data",
+//     },
+//   });
+
+//   console.log("data", res);
+// } catch (err) {
+//   console.log("err", err);
+// }
