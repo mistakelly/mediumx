@@ -1,0 +1,32 @@
+.private__header,
+.private__header-left,
+.private__header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.private__header {
+  padding: 1rem 3rem;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-between;
+
+  &-left {
+    h1 {
+      font-size: 3rem;
+      letter-spacing: -0.2rem;
+      cursor: pointer;
+    }
+  }
+
+  &-right {
+    .right-profile-div {
+      width: 4rem;
+      cursor: pointer;
+      img {
+        clip-path: circle();
+      }
+    }
+  }
+}
