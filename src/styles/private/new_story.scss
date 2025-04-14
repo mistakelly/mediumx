@@ -1,0 +1,257 @@
+.new-story,
+.new-story__header,
+.new-story__header-left,
+.new-story__header-right {
+  display: flex;
+}
+
+.new-story {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    // background: red;
+    justify-content: space-between;
+    width: 70%;
+    margin: 2rem auto;
+
+    &-left {
+      align-items: baseline;
+      gap: 1rem;
+
+      h1 {
+        cursor: pointer;
+      }
+    }
+
+    &-right {
+      gap: 1rem;
+      align-items: center;
+
+      button {
+        border: none;
+        color: white;
+        padding: 0.6rem 4rem;
+        background: green;
+        font-size: 1.4rem;
+        border-radius: 5rem;
+      }
+
+      & > * {
+        cursor: pointer;
+      }
+    }
+
+    &-profile {
+      width: 4rem;
+
+      img {
+        clip-path: circle();
+      }
+    }
+  }
+}
+
+.editor {
+  &__header {
+    // background: red;
+
+    margin-bottom: 4rem;
+    &-title,
+    &-sub-title {
+      width: 100%;
+      //   height: 10rem;
+      padding: 3rem 0 0 1rem;
+      //   border: none;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      //   background: red;
+    }
+
+    &-title::placeholder {
+      font-size: 5rem;
+      font-family: Times New Roman serif;
+      font-weight: "200";
+      letter-spacing: 0.2rem;
+    }
+
+    &-sub-title::placeholder {
+      font-size: 2rem;
+      padding: 0;
+    }
+  }
+
+  &__body {
+    // background: red;
+    &-textarea {
+      font-size: 1.5rem;
+      width: 100%;
+      //   max-width: 10rem;
+      opacity: 0.5rem;
+      resize: vertical;
+    }
+  }
+}
+
+.story-preview {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 87%;
+    padding: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .story-preview__body {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem auto;
+    width: 70%;
+    .story-preview__body-left {
+      width: 45%;
+
+      h2 {
+        margin-bottom: 1rem;
+        opacity: 0.7;
+      }
+      .left-img-div {
+        width: 100%;
+        height: 25rem;
+        margin-bottom: 2rem;
+        background: #fafafa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          width: 60%;
+          text-align: center;
+          font-size: 1.3rem;
+          color: grey;
+        }
+
+        img {
+          display: none;
+        }
+      }
+
+      h1,
+      p:not(:last-child) {
+        margin-bottom: 1rem;
+        border-bottom: 0.1rem solid #ccc;
+      }
+
+      p:last-child span {
+        font-weight: 900;
+      }
+    }
+
+    // STORY PREVIEW RIGHT
+    .story-preview__body-right {
+      width: 40%;
+      align-self: center;
+      margin-top: -8rem;
+      //   background: yellow;
+
+      p:first-child {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p:first-child span {
+        font-weight: 900;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .category-input {
+        width: 100%;
+        background: #fafafa;
+        border: 1px solid #ccc;
+        padding: 1.8rem 0 1.8rem 2rem;
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+        outline: none;
+      }
+      .category-input:focus {
+        outline: none;
+      }
+
+      .checkbox {
+        height: 3rem;
+        display: flex;
+        gap: 1rem;
+
+        input {
+          padding: 1rem;
+          background: green;
+          cursor: pointer;
+        }
+      }
+
+      .cta {
+        display: flex;
+        margin-top: 8rem;
+        gap: 1rem;
+        align-items: center;
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: gray;
+        }
+        button {
+          border: none;
+          padding: 0.6rem 4rem 0.6rem 4rem;
+          color: white;
+          font-size: 1.4rem;
+          background: green;
+          border-radius: 5rem;
+        }
+      }
+    }
+  }
+}
+
+//   .custom-checkbox {
+//     display: inline-flex;
+//     align-items: center;
+//     cursor: pointer;
+//   }
+
+//   .checkbox {
+//     width: 30px;                  /* Width of the checkbox */
+//     height: 30px;                 /* Height of the checkbox */
+//     border: 2px solid #333;      /* Border color */
+//     margin-right: 10px;
+//     border-radius: 5px;          /* Round the corners */
+//     transition: background 0.2s, border-color 0.2s; /* Smooth transition */
+//     position: relative;
+//   }
+
+//   /* Checkmark appearance when checkbox is checked */
+//   input[type="checkbox"]:checked + .checkbox {
+//     background-color: #4CAF50;  /* Green background when checked */
+//     border-color: #4CAF50;      /* Green border */
+//   }
+
+//   input[type="checkbox"]:checked + .checkbox:after {
+//     content: "";                 /* Add a checkmark */
+//     display: block;
+//     width: 10px;                 /* Size of the checkmark */
+//     height: 10px;
+//     background-color: white;    /* Color of the checkmark */
+//     border-radius: 50%;         /* Make the checkmark circular */
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+
+//   /* Optional: Hover effect for custom checkbox */
+//   .checkbox:hover {
+//     border-color: #888;         /* Lighter border color on hover */
+//   }
