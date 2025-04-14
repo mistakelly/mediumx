@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "@/styles/private/home.scss";
 import Story from "../public/preview/Story";
 import { PlusSvg } from "../svg/PlusSvg";
 import { PrivateHeader } from "./PrivateHeader";
-
-
+import { HomeDropDown } from "./DropDown";
 
 export const Home = () => {
   useEffect(() => {
@@ -12,11 +11,21 @@ export const Home = () => {
     // our application starts from there.
   }, []);
 
+  const dropDownRef = useRef<null | HTMLDivElement>(null);
+
+  const handleShowDropDown = () => {
+    if (!dropDownRef.current) {
+      return;
+    }
+    dropDownRef.current.classList.toggle("show-dropdown");
+    dropDownRef.current.classList.toggle("hide-dropdown");
+  };
+
   return (
     <section className="home">
-      <PrivateHeader />
-      {/* Body */}
-      <body className="home__body">
+      <PrivateHeader handleShowDropDown={handleShowDropDown} />
+      <HomeDropDown ref={dropDownRef} />;{/* Body */}
+      <div className="home__body">
         <article className="home__body-article">
           <div className="article-body">
             <div className="article-header">
@@ -45,7 +54,7 @@ export const Home = () => {
         <aside className="home__body-aside">
           <h1>aside</h1>
         </aside>
-      </body>
+      </div>
     </section>
   );
 };

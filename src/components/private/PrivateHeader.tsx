@@ -5,7 +5,11 @@ import searchSvg from "@/components/svg/search-magnifying-glass-svgrepo-com.svg"
 import { NotificaitonSvg } from "../svg/NotificationSvg";
 import "@/styles/private/private_header.scss";
 
-export const PrivateHeader = () => {
+export const PrivateHeader = ({
+  handleShowDropDown,
+}: {
+  handleShowDropDown: () => void;
+}) => {
   return (
     <header className="private__header">
       <div className="private__header-left">
@@ -29,7 +33,7 @@ export const PrivateHeader = () => {
         </div>
 
         <NotificaitonSvg />
-        <div className="right-profile-div">
+        <div className="right-profile-div" onClick={handleShowDropDown}>
           <img src="/assets/images/test_img.png" alt="profile-img" />
         </div>
       </div>
